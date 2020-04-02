@@ -43,7 +43,7 @@
 #'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
 theme_cyberpunk <- function (
-  font = "Source Code Pro",
+  font = "Aldrich",
 main.text.color = "#EE9537",
 sub.text.color = "#EE9537",
 base.size = 15,

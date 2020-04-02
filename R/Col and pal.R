@@ -1,3 +1,9 @@
+#' Named colors for ggCyberPunk
+#'
+#' @description A set of named colors for use in this package's palettes.
+#' @usage colors_cyberpunk[name]
+#'
+#' @return A named character containing a hex color code.
 colors_cyberpunk <- c(
   'cyber1 blue' = "#08F7FE",
   'cyber2 pink' = "#E64E8D",
@@ -13,7 +19,13 @@ colors_cyberpunk <- c(
 
 )
 
-
+#' Extract a list of color codes
+#'
+#' @description Mostly an internal function, it serves to extract colors from \link[ggCyberPunk]{colors_cyberpunk}
+#' @usage get_cyberpunk_colors(c(color1, color2))
+#'
+#' @return A list of color codes
+#' @importFrom grDevices colorRampPalette
 get_cyberpunk_colors <- function(...){
   cols <- c(...)
 
@@ -23,9 +35,20 @@ get_cyberpunk_colors <- function(...){
   return(colors_cyberpunk[cols])
 }
 
+
+#' List of Palettes in ggCyberPunk
+#'
+#' @description A collection of palettes used in ggCyberPunk.
+#' @usage palettes_cyberpunk[pal_name]
+#'
+#' @return a list of names
+#' @details 'main' is the default palette used. It has the neon blue, pink, yellow, and orange
+#' 'zune' is a two color palette using the old zune orange and pink
+#' 'cotton candy' is a blue and pink two color palette
+#' 'laser sword' contains colors best suited for \link[ggCyberPunk]{geom_linesaber} and is based off light saber colors.
 palettes_cyberpunk <- list(
   'main' = get_cyberpunk_colors('cyber1 blue', 'cyber2 pink', 'cyber3 yellow','cyber4 orange'),
-  'zune' = get_cyberpunk_colors('cybe1 pink', 'cyber4 orange'),
+  'zune' = get_cyberpunk_colors('cyber2 pink', 'cyber4 orange'),
   'cotton candy'= get_cyberpunk_colors('cyber1 blue', 'cyber2 pink'),
   'laser sword' = get_cyberpunk_colors('saber1 blue', 'saber2 green', 'saber3 red','saber4 purple')
 )
@@ -39,6 +62,9 @@ get_cyberpunk_palettes <- function(palette = "main", reverse = FALSE, ...) {
   colorRampPalette(pal, ...)
 }
 
+
+#' Color with CyberPunk palettes!
+#' @description
 scale_color_cyberpunk <- function(palette = 'main', discrete= T, reverse = F, ...){
   pal <- get_cyberpunk_palettes(palette = palette, reverse = reverse)
 
@@ -49,7 +75,7 @@ scale_color_cyberpunk <- function(palette = 'main', discrete= T, reverse = F, ..
   }
 }
 
-
+# Fill with CyberPunk palettes!
 scale_fill_cyberpunk <- function(palette = 'main', discrete= T, reverse = F, ...){
   pal <- get_cyberpunk_palettes(palette = palette, reverse = reverse)
 

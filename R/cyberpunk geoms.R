@@ -89,7 +89,8 @@ geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.03){
 }
 
 geom_linesaber <- function(alpha =  1, size = 1.25, glow_alpha = 0.03){
-  geoms <- list(geom_line(size = size * 5.0,  alpha = alpha * glow_alpha),
+  geoms <- list(geom_line(size = size * 5.0,  alpha = alpha * glow_alpha, fill = "White"),
+                geom_line(size = size * 5.0,  alpha = alpha * glow_alpha),
                 geom_line(size = size * 4.9,  alpha = alpha * glow_alpha),
                 geom_line(size = size * 4.8,  alpha = alpha * glow_alpha),
                 geom_line(size = size * 4.7,  alpha = alpha * glow_alpha),
