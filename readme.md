@@ -138,10 +138,19 @@ df %>%
 
 ### main
 
-![](readme_files/figure-gfm/unnamed-chunk-5-1.png)<!-- --> \#\#\# Cotton
-Candy ![](readme_files/figure-gfm/unnamed-chunk-6-1.png)<!-- --> \#\#\#
-zune ![](readme_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> \#\#\#
-main ![](readme_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+### Cotton Candy
+
+![](readme_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+### zune
+
+![](readme_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+### laser sword
+
+![](readme_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ## scale\_fill\_cyberpunk/scale\_color\_cyberpunk
 

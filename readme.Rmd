@@ -151,24 +151,31 @@ df %>%
 ## Also included are palettes
 
 ### main
+
 ```{r,echo=F, warning=F, message=F}
 scales::show_col(c('cyber1 blue' = "#08F7FE",
   'cyber2 pink' = "#E64E8D",
   'cyber3 yellow' = "#ECCE8E",
   'cyber4 orange' = "#EE9537"))
 ```
+
 ### Cotton Candy
+
 ```{r,echo=F, warning=F, message=F}
 scales::show_col(c('cyber1 blue' = "#08F7FE",
   'cyber2 pink' = "#E64E8D"))
 ```
+
 ### zune
+
 ```{r,echo=F, warning=F, message=F}
 scales::show_col(c(
   'cyber2 pink' = "#E64E8D",
   'cyber4 orange' = "#EE9537"))
 ```
-### main
+
+### laser sword
+
 ```{r,echo=F, warning=F, message=F}
 scales::show_col(c(  'saber2 green' = "#32CD32",
   'saber3 red' = "#B22222",
