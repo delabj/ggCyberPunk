@@ -2,7 +2,7 @@
 #'
 #' @description Glowing Lines, lightly colored area plots for a cyberpunk area plot.
 #'
-#' @usage geom_glowing_area <- function(alpha =  1, size = 1)
+#' @usage geom_glowing_area(alpha =  1, size = 1, glow_alpha = 0.03)
 #' @param alpha set the alpha level for the base line.
 #' @param size set the base line size.
 #' @param glow_alpha set the alpha for the glow

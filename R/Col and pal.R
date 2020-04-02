@@ -64,7 +64,15 @@ get_cyberpunk_palettes <- function(palette = "main", reverse = FALSE, ...) {
 
 
 #' Color with CyberPunk palettes!
-#' @description
+#' @aliases scale_color_linesaber, scale_fill_linesaber, scale_fill_cyberpunk
+#' @description use the built in palettes in a ggplot chain.
+#' @useage scale_color_cyberpunk(palette = 'main', discrete= T, reverse = F, ...)
+#' scale_color_linesaber(palette = 'main', discrete= T, reverse = F, ...)
+#' scale_fill_cyberpunk(palette = 'main', discrete= T, reverse = F, ...)
+#' scale_fill_linesaber9palette = 'main', discrete= T, reverse = F, ...)
+#' @param palette the name of the palette ('main', 'zune', 'cotton candy', 'laser sword')
+#' @param discrete Boolean: is the scale discrete or not
+#' @param reverse Boolean: should the scale be reversed
 scale_color_cyberpunk <- function(palette = 'main', discrete= T, reverse = F, ...){
   pal <- get_cyberpunk_palettes(palette = palette, reverse = reverse)
 
@@ -75,7 +83,6 @@ scale_color_cyberpunk <- function(palette = 'main', discrete= T, reverse = F, ..
   }
 }
 
-# Fill with CyberPunk palettes!
 scale_fill_cyberpunk <- function(palette = 'main', discrete= T, reverse = F, ...){
   pal <- get_cyberpunk_palettes(palette = palette, reverse = reverse)
 

@@ -2,10 +2,20 @@
 % Please edit documentation in R/Col and pal.R
 \name{scale_color_cyberpunk}
 \alias{scale_color_cyberpunk}
+\alias{scale_color_linesaber,}
+\alias{scale_fill_linesaber,}
+\alias{scale_fill_cyberpunk}
 \title{Color with CyberPunk palettes!}
 \usage{
 scale_color_cyberpunk(palette = "main", discrete = T, reverse = F, ...)
 }
+\arguments{
+\item{palette}{the name of the palette ('main', 'zune', 'cotton candy', 'laser sword')}
+
+\item{discrete}{Boolean: is the scale discrete or not}
+
+\item{reverse}{Boolean: should the scale be reversed}
+}
 \description{
-Color with CyberPunk palettes!
+use the built in palettes in a ggplot chain.
 }

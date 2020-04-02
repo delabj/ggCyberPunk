@@ -1,0 +1,192 @@
+---
+title: "ggCyberPunk"
+author: "Joshua de la Bruere"
+date: "4/2/2020"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
+
+```
+
+```{r echo = F, message=F, warning=F}
+library(tidyverse)
+library(ggCyberPunk)
+
+df = data.frame(A=c(1,4,4,6,7,5,1),
+               B=c(4,3,5,7,5,6,7),
+               Time=c(1,2,3,4,5,6,7)) %>%
+pivot_longer(cols = c(A,B),names_to = "group", values_to = "count")
+
+
+df %>%
+   ggplot(aes(x=Time, y = count, color = group, fill= group))+
+     geom_glowing_area()+
+    theme_cyberpunk()+
+     scale_fill_cyberpunk("cotton candy")+
+     scale_color_cyberpunk("cotton candy")+
+  ggtitle("Introducing Cyberpunk plots", subtitle = "Using ggCyberPunk")
+
+```
+
+
+## Installation
+This isn't on CRAN, so you'll have to use devtools. 
+
+``devtools::install_github("delabj/ggCyberPunk")``
+
+## Why?
+The other day, I saw a post on [reddit](https://www.reddit.com/r/rstats/comments/fsncqz/cyberpunk_plots_in_r/) asking if there was a way to create a "CyberPunk plot" in R. This was based on plots produced in python using matplotlib as shown on [this repo](https://github.com/dhaitz/mplcyberpunk). Since it's the end times, and I have nothing better to do at home than poke around with a theme, this seemed like a perfect fit.
+
+If you want more cyberpunk themed plot options, palettes, and themes, check out [vapoRwave](https://github.com/moldach/vapoRwave), from which I totally stole the base theme for this package. A few modifications, but it's very much the new_retro theme.
+
+
+## What's in the box?
+
+
+### geom_glowing_area()
+
+A glowing area plot for a cyberpunk/disco/neon vibe.
+
+#### Useage 
+geom_glowing_area(alpha =  1, size = 1, glow_alpha = 0.03)
+
+#### Arguments
+
+`alpha`: the alpha level of the base line
+`size`: size of the base line
+`glow_alpha`: set the alpha level of the glow layers
+
+#### Example
+```{r, message=F, warning=F}
+library(tidyverse)
+library(ggCyberPunk)
+
+df = data.frame(A=c(1,4,4,6,7,5,1),
+               B=c(4,3,5,7,5,6,7),
+               Time=c(1,2,3,4,5,6,7)) %>%
+pivot_longer(cols = c(A,B),names_to = "group", values_to = "count")
+
+
+df %>%
+   ggplot(aes(x=Time, y = count, color = group, fill= group))+
+     geom_glowing_area()+
+     theme_cyberpunk()+
+     scale_fill_cyberpunk("zune")+
+     scale_color_cyberpunk("zune")+
+  ggtitle("geom_glowing_area()", subtitle = "From ggCyberPunk")
+
+```
+
+
+### geom_glowing_line()
+
+A glowing line plot for a cyberpunk/disco/neon vibe.
+
+#### Useage 
+geom_glowing_line(alpha =  1, size = 1, glow_alpha = 0.03)
+
+#### Arguments
+
+`alpha`: the alpha level of the base line
+`size`: size of the base line
+`glow_alpha`: set the alpha level of the glow layers
+
+#### Example
+```{r, message=F, warning=F}
+library(tidyverse)
+library(ggCyberPunk)
+
+df = data.frame(A=c(1,4,4,6,7,5,1),
+               B=c(4,3,5,7,5,6,7),
+               Time=c(1,2,3,4,5,6,7)) %>%
+pivot_longer(cols = c(A,B),names_to = "group", values_to = "count")
+
+
+df %>%
+   ggplot(aes(x=Time, y = count, color = group, fill= group))+
+     geom_glowing_line()+
+     theme_cyberpunk()+
+     scale_color_cyberpunk()+
+  ggtitle("geom_glowing_line()", subtitle = "From ggCyberPunk")
+
+```
+
+### geom_linesaber()
+
+A glowing line plot for a laser sword look.
+
+#### Useage 
+geom_linesaber(alpha =  1, size = 1, glow_alpha = 0.03)
+
+#### Arguments
+
+`alpha`: the alpha level of the base line
+`size`: size of the base line
+`glow_alpha`: set the alpha level of the glow layers
+
+#### Example
+```{r, message=F, warning=F}
+library(tidyverse)
+library(ggCyberPunk)
+
+df = data.frame(A=c(1,4,4,6,7,5,1),
+               B=c(4,3,5,7,5,6,7),
+               Time=c(1,2,3,4,5,6,7)) %>%
+pivot_longer(cols = c(A,B),names_to = "group", values_to = "count")
+
+
+df %>%
+   ggplot(aes(x=Time, y = count, color = group, fill= group))+
+     geom_linesaber()+
+     theme_cyberpunk()+
+     scale_color_linesaber(reverse = T)+
+  ggtitle("geom_linesaber()", subtitle = "From ggCyberPunk")
+
+```
+
+
+## Also included are palettes
+
+### main
+```{r,echo=F, warning=F, message=F}
+scales::show_col(c('cyber1 blue' = "#08F7FE",
+  'cyber2 pink' = "#E64E8D",
+  'cyber3 yellow' = "#ECCE8E",
+  'cyber4 orange' = "#EE9537"))
+```
+### Cotton Candy
+```{r,echo=F, warning=F, message=F}
+scales::show_col(c('cyber1 blue' = "#08F7FE",
+  'cyber2 pink' = "#E64E8D"))
+```
+### zune
+```{r,echo=F, warning=F, message=F}
+scales::show_col(c(
+  'cyber2 pink' = "#E64E8D",
+  'cyber4 orange' = "#EE9537"))
+```
+### main
+```{r,echo=F, warning=F, message=F}
+scales::show_col(c(  'saber2 green' = "#32CD32",
+  'saber3 red' = "#B22222",
+  'saber4 purple' = "#8510d8",
+  'saber1 blue' = "#49f9fe"))
+```
+
+
+## scale_fill_cyberpunk/scale_color_cyberpunk
+
+### usage
+`scale_fill_cyber_punk(palette = "main", discrete = T, reverse = F )`
+`scale_color_cyber_punk(palette = "main", discrete = T, reverse = F )`
+
+
+## scale_fill_linesaber/scale_color_linesaber
+
+### usage
+`scale_fill_linesaber(palette = "main", discrete = T, reverse = F )`
+`scale_color_linesaber(palette = "main", discrete = T, reverse = F )`
+
