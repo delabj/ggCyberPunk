@@ -37,6 +37,15 @@ This isn't on CRAN, so you'll have to use devtools.
 
 ``devtools::install_github("delabj/ggCyberPunk")``
 
+## Dependancies 
+
+This package uses extrafont to install the cyberpunk font. If you don't want to use this, you can always specify a font that your system has installed and the R recongnizes. 
+
+This package also uses ggplot2, this is required for the plot to actually function. 
+
+Additionally, dplyr is used to make some of the internal code a bit more readable. 
+
+
 ## Why?
 The other day, I saw a post on [reddit](https://www.reddit.com/r/rstats/comments/fsncqz/cyberpunk_plots_in_r/) asking if there was a way to create a "CyberPunk plot" in R. This was based on plots produced in python using matplotlib as shown on [this repo](https://github.com/dhaitz/mplcyberpunk). Since it's the end times, and I have nothing better to do at home than poke around with a theme, this seemed like a perfect fit.
 

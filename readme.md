@@ -11,6 +11,18 @@ This isn’t on CRAN, so you’ll have to use devtools.
 
 `devtools::install_github("delabj/ggCyberPunk")`
 
+## Dependancies
+
+This package uses extrafont to install the cyberpunk font. If you don’t
+want to use this, you can always specify a font that your system has
+installed and the R recongnizes.
+
+This package also uses ggplot2, this is required for the plot to
+actually function.
+
+Additionally, dplyr is used to make some of the internal code a bit more
+readable.
+
 ## Why?
 
 The other day, I saw a post on
