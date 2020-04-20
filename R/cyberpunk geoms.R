@@ -26,21 +26,38 @@
 #'      theme_cyberpunk()+
 #'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
-geom_glowing_area <- function(alpha =  1, size = 1.5, glow_alpha = 0.03){
-  geoms <- list(geom_area(alpha = .1, position = "identity"),
-                geom_line(size = size * 3.33,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 3.27,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 3.20,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 3.13,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 3.07,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 3.00,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 2.93,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 2.87,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 2.80,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 2.73,  alpha = alpha * glow_alpha),
-                geom_point(size = size * 2, alpha = alpha),
-                geom_line(size = size * 1, alpha = alpha))
+geom_glowing_area <- function(alpha =  1, size = 1.5, glow_alpha = 0.03, layers = 10){
+  geoms <- list(geom_area(alpha = .1, position = "identity"))
+
+  for(i in 1:layers){
+    geoms <- c(geoms, geom_line( size = size * (3.33)-(1-(i-1)/layers),  alpha = alpha * glow_alpha ))
+  }
+
+  geoms <- c(geoms,
+             geom_line(size = size * 1, alpha = alpha),
+             geom_point(size = size * 2, alpha = alpha)
+             )
+
+
 }
+
+
+# Old Version
+# geom_glowing_area <- function(alpha =  1, size = 1.5, glow_alpha = 0.03){
+#   geoms <- list(geom_area(alpha = .1, position = "identity"),
+#                 geom_line(size = size * 3.33,  alpha = alpha * glow_alpha),
+#                 geom_line(size = size * 3.27,  alpha = alpha * glow_alpha),
+#                 geom_line(size = size * 3.20,  alpha = alpha * glow_alpha),
+#                 geom_line(size = size * 3.13,  alpha = alpha * glow_alpha),
+#                 geom_line(size = size * 3.07,  alpha = alpha * glow_alpha),
+#                 geom_line(size = size * 3.00,  alpha = alpha * glow_alpha),
+#                 geom_line(size = size * 2.93,  alpha = alpha * glow_alpha),
+#                 geom_line(size = size * 2.87,  alpha = alpha * glow_alpha),
+#                 geom_line(size = size * 2.80,  alpha = alpha * glow_alpha),
+#                 geom_line(size = size * 2.73,  alpha = alpha * glow_alpha),
+#                 geom_point(size = size * 2, alpha = alpha),
+#                 geom_line(size = size * 1, alpha = alpha))
+# }
 
 
 
@@ -73,32 +90,32 @@ geom_glowing_area <- function(alpha =  1, size = 1.5, glow_alpha = 0.03){
 #'      theme_dark()+
 #'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
-geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.03){
-  geoms <- list(geom_line(size = size * 3.33,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 3.27,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 3.20,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 3.13,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 3.07,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 3.00,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 2.93,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 2.87,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 2.80,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 2.73,  alpha = alpha * glow_alpha),
-                geom_point(size = size * 2, alpha = alpha),
-                geom_line(size = size * 1, alpha = alpha))
+geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.03, layers = 10){
+
+  geoms <- list()
+
+  for(i in 1:layers){
+    geoms <- c(geoms, geom_line( size = size * (3.33)-(1-(i-1)/layers),  alpha = alpha * glow_alpha ))
+  }
+
+  geoms <- c(geoms,
+             geom_line(size = size * 1, alpha = alpha),
+             geom_point(size = size * 2, alpha = alpha)
+  )
+
 }
 
-geom_linesaber <- function(alpha =  1, size = 1.25, glow_alpha = 0.03){
-  geoms <- list(geom_line(size = size * 5.0,  alpha = alpha * glow_alpha, fill = "White"),
-                geom_line(size = size * 5.0,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 4.9,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 4.8,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 4.7,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 4.6,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 4.5,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 4.4,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 4.3,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 4.2,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 4.1,  alpha = alpha * glow_alpha),
-                geom_line(size = size * 1, alpha = alpha, color = "white"))
+geom_linesaber <- function(alpha =  1, size = 1.25, glow_alpha = 0.03, layers = 10){
+
+  geoms <- list(geom_line(size = size * 5.0,  alpha = alpha * glow_alpha, color = "White"))
+
+  for(i in 1:layers){
+    geoms <- c(geoms, geom_line( size = size * (5)-(1-(i-1)/layers),  alpha = alpha * glow_alpha ))
+  }
+
+  geoms <- c(geoms,
+             geom_line(size = size * 1, alpha = alpha, color = "white")
+  )
+
+
 }
