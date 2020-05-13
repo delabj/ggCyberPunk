@@ -119,3 +119,21 @@ geom_linesaber <- function(alpha =  1, size = 1.25, glow_alpha = 0.03, layers = 
 
 
 }
+
+
+
+geom_glowing_point <- function(alpha =  1, size = 1, glow_alpha = 0.03, layers = 13){
+  geoms <- list()
+
+  for(i in 1:layers){
+    geoms <- c(geoms, geom_point( size = size * (5)-(1-(i-1)/layers),  alpha = alpha * glow_alpha ))
+  }
+
+  geoms <- c(geoms,
+             geom_point(size = size, alpha = alpha*glow_alpha*2)
+  )
+
+  return(geoms)
+
+}
+

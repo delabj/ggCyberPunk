@@ -1,7 +1,7 @@
 Package: ggCyberPunk
 Type: Package
 Title: Create Cyberpunk area and line plots
-Version: 0.0.1
+Version: 0.0.2
 Author: Joshua de la Bruere
 Maintainer: Joshua de la Bruere <joshua@delabj.com>
 Description: Create a sci-fi themed area or line plot. This profides a "geom" of sorts that adds a glow effect around a line or area plot. 
