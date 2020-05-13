@@ -88,3 +88,10 @@ df %>%
   ggCyberPunk::theme_cyberpunk()+
   scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
   scale_color_manual(values = c("#08F7FE", "#FE53BB"))
+
+
+df <- data.frame(x = factor(rep(letters[1:5], each = 10)), y = rnorm(50), color=(rep(c("A", "B", "C", "B", "A"), each=10)))
+ggplot(df, aes(x = x, y = y, color=color))+
+  geom_glowing_point()+
+  ggCyberPunk::theme_cyberpunk()+
+  ggCyberPunk::scale_color_cyberpunk()
