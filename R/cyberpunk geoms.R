@@ -126,14 +126,27 @@ geom_glowing_point <- function(alpha =  1, size = 1, glow_alpha = 0.03, layers =
   geoms <- list()
 
   for(i in 1:layers){
-    geoms <- c(geoms, geom_point( size = size * (5)-(1-(i-1)/layers),  alpha = alpha * glow_alpha ))
+    geoms <- c(geoms, geom_point( size = size + (5)*(1-(i-1)/layers),  alpha = alpha * glow_alpha ))
   }
 
   geoms <- c(geoms,
-             geom_point(size = size, alpha = alpha*glow_alpha*2)
+             geom_point(size = size, alpha = alpha*glow_alpha*10)
   )
 
   return(geoms)
 
 }
 
+
+geom_glowing_boxplot <- function(alpha =  1, size = 1.5, glow_alpha = 0.003, layers = 10){
+
+  geoms <- list()
+
+  for(i in 1:layers){
+    geoms <- c(geoms, geom_boxplot( size = size * (3.33)-(1-(i-1)/layers),  alpha = alpha * glow_alpha ))
+  }
+
+  geoms <- c(geoms,
+             geom_boxplot(size = size * 1, alpha = alpha)
+             )
+}
