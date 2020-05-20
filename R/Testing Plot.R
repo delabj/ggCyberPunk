@@ -80,15 +80,30 @@
 # #
 # #
 # #
+# # df %>%
+# #   ggplot(aes(x=I, y = count, color = group, fill= group))+
+# #   geom_glowing_bar(stat = "identity", position="jitter")+
+# #   ggCyberPunk::theme_cyberpunk()+
+# #   scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
+# #   scale_color_manual(values = c("#08F7FE", "#FE53BB"))+
+# #   delabj::gridlines_off()+
+# #   labs(x="", y="")+
+# #   theme(legend.position = "none",
+# #         panel.grid = element_blank(),
+# #         axis.title = element_blank(),
+# #         axis.text = element_blank(),
+# #         axis.ticks = element_blank())
+#
+#
+#
 # library(tidyverse)
 # library(delabj)
 # df %>%
 #   ggplot(aes(x=I, y = count, color = group, fill= group))+
-#   geom_glowing_point()+
+#   geom_glowing_bar(stat = "identity", position="dodge")+
 #   ggCyberPunk::theme_cyberpunk()+
 #   scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #   scale_color_manual(values = c("#08F7FE", "#FE53BB"))
-#
 #
 # df <- data.frame(x = factor(rep(letters[1:5], each = 10)), y = rnorm(50), color=(rep(c("A", "B", "C", "B", "A"), each=10)))
 # ggplot(df, aes(x = x, y = y, fill=color))+

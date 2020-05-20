@@ -6,6 +6,8 @@
 #' @param alpha set the alpha level for the base line.
 #' @param size set the base line size.
 #' @param glow_alpha set the alpha for the glow
+#' @param layers the number of glowing layers. Changing this will likely require a reduction on glow alpha.
+#' @param ... Allows for additional arguments to be passed on.
 #'
 #' @details Create a cyberpunk themed chart using ggplot. This plot is a fancy area plot, that uses a glow effect around the upper line.
 #' @return A list of ggplot geoms containin geom_area, geom_lines, and geom_point.
@@ -26,16 +28,16 @@
 #'      theme_cyberpunk()+
 #'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
-geom_glowing_area <- function(alpha =  1, size = 1.5, glow_alpha = 0.03, layers = 10){
-  geoms <- list(geom_area(alpha = .1, position = "identity"))
+geom_glowing_area <- function(alpha =  1, size = 1.5, glow_alpha = 0.03, layers = 10, ...){
+  geoms <- list(geom_area(alpha = .1, position = "identity", ...))
 
   for(i in 1:layers){
-    geoms <- c(geoms, geom_line( size = size * (3.33)-(1-(i-1)/layers),  alpha = alpha * glow_alpha ))
+    geoms <- c(geoms, geom_line( size = size * (3.33)-(1-(i-1)/layers),  alpha = alpha * glow_alpha, ... ))
   }
 
   geoms <- c(geoms,
-             geom_line(size = size * 1, alpha = alpha),
-             geom_point(size = size * 2, alpha = alpha)
+             geom_line(size = size * 1, alpha = alpha, ...),
+             geom_point(size = size * 2, alpha = alpha, ...)
              )
 
 
@@ -66,10 +68,12 @@ geom_glowing_area <- function(alpha =  1, size = 1.5, glow_alpha = 0.03, layers 
 #'
 #' @description Glowing Lines, lightly colored area plots for a cyberpunk/Laser sword themed line plot
 #'
-#' @usage geom_glowing_line <- function(alpha =  1, size = 1)
+#' @usage geom_glowing_line()
 #' @param alpha set the alpha level for the base line.
 #' @param size set the base line size.
 #' @param glow_alpha set the alpha for the glow
+#' @param layers the number of glowing layers. Changing this will likely require a reduction on glow alpha.
+#' @param ... Allows for additional arguments to be passed on.
 #'
 #' @details Create a cyberpunk themed chart using ggplot. This plot is a fancy line plot, that uses a glow effect around the line.
 #' @return A list of ggplot geoms containing, geom_lines, and geom_point. geom_linesaber does not return a geom_point
@@ -90,7 +94,8 @@ geom_glowing_area <- function(alpha =  1, size = 1.5, glow_alpha = 0.03, layers 
 #'      theme_dark()+
 #'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
-geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.03, layers = 10){
+#'      @export
+geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.03, layers = 10, ...){
 
   geoms <- list()
 
@@ -105,24 +110,54 @@ geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.03, layers 
 
 }
 
-geom_linesaber <- function(alpha =  1, size = 1.25, glow_alpha = 0.03, layers = 10){
+geom_linesaber <- function(alpha =  1, size = 1.25, glow_alpha = 0.03, layers = 10, ...){
 
-  geoms <- list(geom_line(size = size * 5.0,  alpha = alpha * glow_alpha, color = "White"))
+  geoms <- list(geom_line(size = size * 5.0,  alpha = alpha * glow_alpha, color = "White", ...))
 
   for(i in 1:layers){
-    geoms <- c(geoms, geom_line( size = size * (5)-(1-(i-1)/layers),  alpha = alpha * glow_alpha ))
+    geoms <- c(geoms, geom_line( size = size * (5)-(1-(i-1)/layers),  alpha = alpha * glow_alpha , ...))
   }
 
   geoms <- c(geoms,
-             geom_line(size = size * 1, alpha = alpha, color = "white")
+             geom_line(size = size * 1, alpha = alpha, color = "white", ...)
   )
 
 
 }
 
 
-
-geom_glowing_point <- function(alpha =  1, size = 1, glow_alpha = 0.03, layers = 13){
+#' Sci-Fi themed scatterplots
+#'
+#' @description Glowing points, for a sci-fi themed scatterplot
+#'
+#' @usage geom_fireflies()
+#' @param alpha set the alpha level for the base line.
+#' @param size set the base line size.
+#' @param glow_alpha set the alpha for the glow
+#' @param layers the number of glowing layers. Changing this will likely require a reduction on glow alpha.
+#' @param ... Allows for additional arguments to be passed on.
+#'
+#' @details Create a cyberpunk themed chart using ggplot. This plot is a fancy scatterplot, that uses a glow effect around the point
+#' @return A list of ggplot geoms containing geom_point.
+#'
+#' @examples
+#' library(ggplot2)
+#' library(tidyverse)
+#'
+#' df = data.frame(A=c(1,4,4,6,7,5,1),
+#'                B=c(4,3,5,7,5,6,7),
+#'                I=c(1,2,3,4,5,6,7)) %>%
+#' pivot_longer(cols = c(A,B),names_to = "group", values_to = "count")
+#'
+#'
+#' df %>%
+#'    ggplot(aes(x=I, y = count, color = group, fill= group))+
+#'      geom_fireflies()+
+#'      theme_dark()+
+#'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
+#'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
+#'@export
+geom_fireflies <- function(alpha =  1, size = 1, glow_alpha = 0.03, layers = 13, ...){
   geoms <- list()
 
   for(i in 1:layers){
@@ -130,12 +165,37 @@ geom_glowing_point <- function(alpha =  1, size = 1, glow_alpha = 0.03, layers =
   }
 
   geoms <- c(geoms,
-             geom_point(size = size, alpha = alpha*glow_alpha*10)
+             geom_point(size = size, alpha = alpha*glow_alpha*10, ...)
   )
 
   return(geoms)
 
 }
+
+geom_glowing_line <- function(...){
+  geom_fireflies(...)
+}
+
+geom_glowing_bar <- function(alpha =  1, size = 1.5, glow_alpha = 0.003, layers = 15, ...){
+
+  geoms <- list()
+
+  for(i in 1:layers){
+    geoms <- c(geoms, geom_bar(
+      aes(
+        color= after_scale(alpha(fill, alpha = glow_alpha*2)),
+      ),
+      size = size * (3.33)-(1-(i-1)/layers),
+      alpha = glow_alpha,
+      ...
+    )
+    )
+  }
+  return(geoms)
+
+}
+
+
 
 
 geom_glowing_boxplot <- function(alpha =  1, size = 1.5, glow_alpha = 0.003, layers = 15){
