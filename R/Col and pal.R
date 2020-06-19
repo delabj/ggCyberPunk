@@ -89,7 +89,7 @@ scale_fill_cyberpunk <- function(palette = 'main', discrete= T, reverse = F, ...
   if (discrete) {
     discrete_scale("fill", paste0("cyberpunk", palette), palette = pal, ...)
   } else {
-    scale_color_gradientn(colours = pal(256), ...)
+    scale_fill_gradientn(colours = pal(256), ...)
   }
 }
 
@@ -111,6 +111,6 @@ scale_fill_linesaber <- function(palette = 'laser sword', discrete= T, reverse =
   if (discrete) {
     discrete_scale("fill", paste0("cyberpunk", palette), palette = pal, ...)
   } else {
-    scale_color_gradientn(colours = pal(256), ...)
+    scale_fill_gradientn(colours = pal(256), ...)
   }
 }
