@@ -35,7 +35,7 @@ geom_glowing_line <- function(
     data = data,
     mapping = mapping,
     stat = stat,
-    geom = GeomGlowingPoint,
+    geom = GeomGlowingLine,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
@@ -63,9 +63,8 @@ GeomGlowingLine <- ggplot2::ggproto(
   "GeomGlowingPoint",
   Geom,
   required_aes = c("x", "y"),
-  non_missing_aes = c("size", "shape", "colour"),
+  non_missing_aes = c("size", "colour"),
   default_aes = ggplot2::aes(
-    shape      = 19,
     colour     = "black",
     size       = 1,
     fill       = NA,
@@ -82,9 +81,7 @@ GeomGlowingLine <- ggplot2::ggproto(
     coord,
     na.rm =  FALSE
   ){
-    if(is.character(data$shape)){
-      data$shape <- translate_shape_string(data$shape)
-    }
+
     coords <- coord$transform(data, panel_params)
 
 
@@ -94,10 +91,9 @@ GeomGlowingLine <- ggplot2::ggproto(
       fraction = fractions[step]
       this_alpha <- ind_alpha[step]
 
-      grid::pointsGrob(
+      grid::linesGrob(
         coords$x,
         coords$y,
-        pch = coords$shape,
         gp = grid::gpar(
           col      = alpha(coords$colour, this_alpha),
           fill     = alpha(coords$fill  , this_alpha),
@@ -134,10 +130,9 @@ GeomGlowingLine <- ggplot2::ggproto(
       "geom_point",
       grid::grobTree(
         glow_grobs,
-        grid::pointsGrob(
+        grid::linesGrob(
           coords$x,
           coords$y,
-          pch = coords$shape,
           gp = grid::gpar(
             col      = alpha(coords$colour, coords$alpha),
             fill     = alpha(coords$fill, coords$alpha),
@@ -149,7 +144,7 @@ GeomGlowingLine <- ggplot2::ggproto(
     )
   },
 
-  draw_key = draw_key_Line
+  draw_key = draw_key_path
 )
 
 
