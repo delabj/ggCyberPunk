@@ -1,7 +1,9 @@
 #### shamelessly ripped from hrbrthemes
 
 .onAttach <- function(libname, pkgname) {
+  pdfFonts <- grDevices::pdfFonts
 
+  windowsFonts <- grDevices::windowsFonts
 
   if (.Platform$OS.type == "windows")  {
     if (interactive()) packageStartupMessage("Registering Windows fonts with R")
@@ -21,3 +23,4 @@
   }
 
 }
+

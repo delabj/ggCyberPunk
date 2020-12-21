@@ -82,7 +82,7 @@ scale_color_cyberpunk <- function(palette = 'main', discrete= T, reverse = F, ..
   if (discrete) {
     ggplot2::discrete_scale("colour", paste0("cyberpunk", palette), palette = pal, ...)
   } else {
-    scale_color_gradientn(colours = pal(256), ...)
+    ggplot2::scale_color_gradientn(colours = pal(256), ...)
   }
 }
 
@@ -96,7 +96,7 @@ scale_fill_cyberpunk <- function(palette = 'main', discrete= T, reverse = F, ...
   if (discrete) {
     ggplot2::discrete_scale("fill", paste0("cyberpunk", palette), palette = pal, ...)
   } else {
-    scale_fill_gradientn(colours = pal(256), ...)
+    ggplot2::scale_fill_gradientn(colours = pal(256), ...)
   }
 }
 
@@ -107,7 +107,7 @@ scale_color_linesaber <- function(palette = 'laser sword', discrete= T, reverse 
   if (discrete) {
     ggplot2::discrete_scale("colour", paste0("cyberpunk", palette), palette = pal, ...)
   } else {
-    scale_color_gradientn(colours = pal(256), ...)
+    ggplot2::scale_color_gradientn(colours = pal(256), ...)
   }
 }
 
@@ -118,6 +118,6 @@ scale_fill_linesaber <- function(palette = 'laser sword', discrete= T, reverse =
   if (discrete) {
     ggplot2::discrete_scale("fill", paste0("cyberpunk", palette), palette = pal, ...)
   } else {
-    scale_fill_gradientn(colours = pal(256), ...)
+    ggplot2::scale_fill_gradientn(colours = pal(256), ...)
   }
 }
