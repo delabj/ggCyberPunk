@@ -2,7 +2,7 @@
 #'
 #' @description Glowing Lines, lightly colored area plots for a cyberpunk area plot.
 #'
-#' @usage geom_glowing_area(alpha =  1, size = 1, glow_alpha = 0.03)
+#' @usage geom_glowing_area(alpha =  1, size = 1, glow_alpha = 0.03, layers = 10, glow_size = .65)
 #' @param alpha set the alpha level for the base line.
 #' @param size set the base line size.
 #' @param glow_alpha alpha level for the glow effect
@@ -61,10 +61,11 @@ geom_glowing_area <- function(
 
 
 #' Sci-Fi themed line plots
+#' @rdname geom_glowing_line
 #'
 #' @description Glowing Lines, lightly colored area plots for a cyberpunk/Laser sword themed line plot
 #'
-#' @usage geom_glowing_line <- function(alpha =  1, size = 1)
+#' @usage geom_glowing_line <- function(alpha =  1, size = 1,layers = 10, glow_size = .65)
 #' @param alpha set the alpha level for the base line.
 #' @param size set the base line size.
 #' @param glow_alpha alpha level for the glow effect
@@ -72,7 +73,8 @@ geom_glowing_area <- function(
 #' @param glow_size size of the glow
 #'
 #' @details Create a cyberpunk themed chart using ggplot. This plot is a fancy line plot, that uses a glow effect around the line.
-#' @return A list of ggplot geoms containing, geom_lines, and geom_point. geom_linesaber does not return a geom_point
+#' @return A list of ggplot geoms containing, geom_lines, and geom_point.
+#' geom_linesaber does not return a geom_point
 #'
 #' @examples
 #' \dontrun{
@@ -92,8 +94,11 @@ geom_glowing_area <- function(
 #'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
 #'}
-#' @export
+#'
+NULL
 
+#' @rdname geom_glowing_line
+#' @export
 geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.05, layers = 10, glow_size = 0.65){
 
   geoms <- list()
@@ -117,7 +122,6 @@ geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.05, layers 
 
 #' A lightsaber inspired plot
 #' @rdname geom_glowing_line
-#' @describeIn geom_glowing_line
 #' @export
 geom_linesaber <- function(alpha =  1, size = 1.25, glow_alpha = 0.05, layers = 10, glow_size = .65, inner_color = "white"){
 

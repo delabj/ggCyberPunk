@@ -4,7 +4,7 @@
 \alias{geom_glowing_area}
 \title{A Cyberpunk styled area chart}
 \usage{
-geom_glowing_area(alpha =  1, size = 1, glow_alpha = 0.03)
+geom_glowing_area(alpha =  1, size = 1, glow_alpha = 0.03, layers = 10, glow_size = .65)
 }
 \arguments{
 \item{alpha}{set the alpha level for the base line.}
