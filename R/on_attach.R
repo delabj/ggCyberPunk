@@ -3,10 +3,11 @@
 .onAttach <- function(libname, pkgname) {
   pdfFonts <- grDevices::pdfFonts
 
-  windowsFonts <- grDevices::windowsFonts
 
   if (.Platform$OS.type == "windows")  {
     if (interactive()) packageStartupMessage("Registering Windows fonts with R")
+    windowsFonts <- grDevices::windowsFonts
+
     extrafont::loadfonts("win", quiet = TRUE)
   }
 
