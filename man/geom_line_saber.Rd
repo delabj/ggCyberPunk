@@ -4,7 +4,14 @@
 \alias{geom_linesaber}
 \title{Lightsaber themed line plots}
 \usage{
-geom_glowing_line <- function(alpha =  1, size = 1,layers = 10, glow_size = .65)
+geom_linesaber(
+  alpha = 1,
+  size = 1.25,
+  glow_alpha = 0.05,
+  layers = 10,
+  glow_size = 0.65,
+  inner_color = "white"
+)
 }
 \arguments{
 \item{alpha}{set the alpha level for the base line.}
@@ -16,6 +23,8 @@ geom_glowing_line <- function(alpha =  1, size = 1,layers = 10, glow_size = .65)
 \item{layers}{number of glowing layers to draw,}
 
 \item{glow_size}{size of the glow}
+
+\item{inner_color}{color of the inner line}
 }
 \value{
 A list of ggplot geoms containing, geom_lines, and geom_point.
@@ -40,7 +49,7 @@ pivot_longer(cols = c(A,B),names_to = "group", values_to = "count")
 
 df \%>\%
    ggplot(aes(x=I, y = count, color = group, fill= group))+
-     geom_glowing_area()+
+     geom_linesaber()+
      theme_dark()+
      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
      scale_color_manual(values = c("#08F7FE", "#FE53BB"))

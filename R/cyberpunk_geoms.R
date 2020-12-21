@@ -2,7 +2,7 @@
 #'
 #' @description Glowing Lines, lightly colored area plots for a cyberpunk area plot.
 #'
-#' @usage geom_glowing_area(alpha =  1, size = 1, glow_alpha = 0.03, layers = 10, glow_size = .65)
+#' @usage geom_glowing_area(alpha =  1, size = 1.5, glow_alpha = 0.05, layers = 10, glow_size = .65)
 #' @param alpha set the alpha level for the base line.
 #' @param size set the base line size.
 #' @param glow_alpha alpha level for the glow effect
@@ -64,7 +64,6 @@ geom_glowing_area <- function(
 #'
 #' @description Glowing Lines, lightly colored area plots for a cyberpunk/Laser sword themed line plot
 #'
-#' @usage geom_glowing_line <- function(alpha =  1, size = 1,layers = 10, glow_size = .65)
 #' @param alpha set the alpha level for the base line.
 #' @param size set the base line size.
 #' @param glow_alpha alpha level for the glow effect
@@ -121,12 +120,12 @@ geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.05, layers 
 #'
 #' @description Glowing Lines, lightly colored area plots for a cyberpunk/Laser sword themed line plot
 #'
-#' @usage geom_glowing_line <- function(alpha =  1, size = 1,layers = 10, glow_size = .65)
 #' @param alpha set the alpha level for the base line.
 #' @param size set the base line size.
 #' @param glow_alpha alpha level for the glow effect
 #' @param layers number of glowing layers to draw,
 #' @param glow_size size of the glow
+#' @param inner_color color of the inner line
 #'
 #' @details Create a cyberpunk themed chart using ggplot. This plot is a fancy line plot, that uses a glow effect around the line.
 #' @return A list of ggplot geoms containing, geom_lines, and geom_point.
@@ -145,7 +144,7 @@ geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.05, layers 
 #'
 #' df %>%
 #'    ggplot(aes(x=I, y = count, color = group, fill= group))+
-#'      geom_glowing_area()+
+#'      geom_linesaber()+
 #'      theme_dark()+
 #'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))

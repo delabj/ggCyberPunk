@@ -1,12 +1,6 @@
 #' Cyberpunk Themes for Sci-Fi Obsessed Teans
 #' @description
 #' A theme to make beautiful cyer punk themed plots. Based of the theme newRetro in the vapoRwave package
-#' @usage theme_cyberpunk( font = "Source Code Pro", main.text.color = "#EE9537",
-#' sub.text.color = "#EE9537", base.size = 15, plot.background.color = "#212946",
-#' legend.position = "right", panel.border.color = "#494F67", panel.background = "#212946",
-#' panel.grid.color = "#EE9537", axis.text.color = "#EE9537", axis.text.size = base.size * 0.6666667,
-#' subtitle.size = base.size * 0.8, legend.text = base.size * 0.8, legend.title = base.size * 0.85,
-#' axis.title.size = base.size * 0.8, title.size = 15)
 #' @param font sets the default font
 #' @param main.text.color sets the main text color
 #' @param sub.text.color sets the subtext color

@@ -6,6 +6,9 @@
 \usage{
 get_cyberpunk_colors(...)
 }
+\arguments{
+\item{...}{arguments}
+}
 \value{
 A list of color codes
 }

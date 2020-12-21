@@ -4,7 +4,13 @@
 \alias{geom_glowing_line}
 \title{Sci-Fi themed line plots}
 \usage{
-geom_glowing_line <- function(alpha =  1, size = 1,layers = 10, glow_size = .65)
+geom_glowing_line(
+  alpha = 1,
+  size = 1.5,
+  glow_alpha = 0.05,
+  layers = 10,
+  glow_size = 0.65
+)
 }
 \arguments{
 \item{alpha}{set the alpha level for the base line.}

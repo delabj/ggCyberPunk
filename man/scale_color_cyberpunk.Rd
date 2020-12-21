@@ -17,6 +17,8 @@ scale_fill_cyberpunk(palette = "main", discrete = T, reverse = F, ...)
 \item{discrete}{Boolean: is the scale discrete or not}
 
 \item{reverse}{Boolean: should the scale be reversed}
+
+\item{...}{additional arguments}
 }
 \description{
 use the built in palettes in a ggplot chain.

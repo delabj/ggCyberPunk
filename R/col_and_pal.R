@@ -21,7 +21,7 @@ colors_cyberpunk <- c(
 #' Extract a list of color codes
 #'
 #' @description Mostly an internal function, it serves to extract colors from \link[ggCyberPunk]{colors_cyberpunk}
-#'
+#' @param ... arguments
 #' @return A list of color codes
 get_cyberpunk_colors <- function(...){
   cols <- c(...)
@@ -49,7 +49,10 @@ palettes_cyberpunk <- list(
   'laser sword' = get_cyberpunk_colors('saber1 blue', 'saber2 green', 'saber3 red','saber4 purple')
 )
 
-#' get cyberpunk palletes from list.
+#' get cyberpunk palette from list.
+#' @param palette name of the palette
+#' @param reverse should the palette be reversed
+#' @param ... arguments
 get_cyberpunk_palettes <- function(palette = "main", reverse = FALSE, ...) {
   pal <- palettes_cyberpunk[[palette]]
 
@@ -69,6 +72,7 @@ get_cyberpunk_palettes <- function(palette = "main", reverse = FALSE, ...) {
 #' @param palette the name of the palette ('main', 'zune', 'cotton candy', 'laser sword')
 #' @param discrete Boolean: is the scale discrete or not
 #' @param reverse Boolean: should the scale be reversed
+#' @param ... additional arguments
 #' @rdname scale_color_cyberpunk
 #' @export
 
