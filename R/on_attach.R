@@ -1,8 +1,5 @@
 #### shamelessly ripped from hrbrthemes
 
-
-
-
 .onAttach <- function(libname, pkgname) {
 
 

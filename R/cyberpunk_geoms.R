@@ -61,7 +61,6 @@ geom_glowing_area <- function(
 
 
 #' Sci-Fi themed line plots
-#' @rdname geom_glowing_line
 #'
 #' @description Glowing Lines, lightly colored area plots for a cyberpunk/Laser sword themed line plot
 #'
@@ -95,8 +94,6 @@ geom_glowing_area <- function(
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
 #'}
 #'
-NULL
-
 #' @rdname geom_glowing_line
 #' @export
 geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.05, layers = 10, glow_size = 0.65){
@@ -120,8 +117,41 @@ geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.05, layers 
 }
 
 
-#' A lightsaber inspired plot
-#' @rdname geom_glowing_line
+#' Lightsaber themed line plots
+#'
+#' @description Glowing Lines, lightly colored area plots for a cyberpunk/Laser sword themed line plot
+#'
+#' @usage geom_glowing_line <- function(alpha =  1, size = 1,layers = 10, glow_size = .65)
+#' @param alpha set the alpha level for the base line.
+#' @param size set the base line size.
+#' @param glow_alpha alpha level for the glow effect
+#' @param layers number of glowing layers to draw,
+#' @param glow_size size of the glow
+#'
+#' @details Create a cyberpunk themed chart using ggplot. This plot is a fancy line plot, that uses a glow effect around the line.
+#' @return A list of ggplot geoms containing, geom_lines, and geom_point.
+#' geom_linesaber does not return a geom_point
+#'
+#' @examples
+#' \dontrun{
+#' library(ggplot2)
+#' library(tidyverse)
+#'
+#' df = data.frame(A=c(1,4,4,6,7,5,1),
+#'                B=c(4,3,5,7,5,6,7),
+#'                I=c(1,2,3,4,5,6,7)) %>%
+#' pivot_longer(cols = c(A,B),names_to = "group", values_to = "count")
+#'
+#'
+#' df %>%
+#'    ggplot(aes(x=I, y = count, color = group, fill= group))+
+#'      geom_glowing_area()+
+#'      theme_dark()+
+#'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
+#'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
+#'}
+#'
+#' @rdname geom_line_saber
 #' @export
 geom_linesaber <- function(alpha =  1, size = 1.25, glow_alpha = 0.05, layers = 10, glow_size = .65, inner_color = "white"){
 

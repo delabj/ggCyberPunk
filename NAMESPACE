@@ -3,5 +3,6 @@
 export(geom_glowing_area)
 export(geom_glowing_line)
 export(geom_linesaber)
+export(import_aldrich)
 export(scale_color_cyberpunk)
 export(scale_fill_cyberpunk)

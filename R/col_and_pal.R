@@ -1,8 +1,6 @@
 #' Named colors for ggCyberPunk
 #'
 #' @description A set of named colors for use in this package's palettes.
-#' @param name name of the color used
-#' @usage colors_cyberpunk[name]
 #'
 #' @return A named character containing a hex color code.
 colors_cyberpunk <- c(
@@ -23,7 +21,6 @@ colors_cyberpunk <- c(
 #' Extract a list of color codes
 #'
 #' @description Mostly an internal function, it serves to extract colors from \link[ggCyberPunk]{colors_cyberpunk}
-#' @usage get_cyberpunk_colors(c(color1, color2))
 #'
 #' @return A list of color codes
 get_cyberpunk_colors <- function(...){
@@ -39,8 +36,6 @@ get_cyberpunk_colors <- function(...){
 #' List of Palettes in ggCyberPunk
 #'
 #' @description A collection of palettes used in ggCyberPunk.
-#' @param pal_name name of the palette to use
-#' @usage palettes_cyberpunk[pal_name]
 #'
 #' @return a list of names
 #' @details 'main' is the default palette used. It has the neon blue, pink, yellow, and orange
