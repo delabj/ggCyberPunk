@@ -8,6 +8,8 @@
 \title{Color with CyberPunk palettes!}
 \usage{
 scale_color_cyberpunk(palette = "main", discrete = T, reverse = F, ...)
+
+scale_fill_cyberpunk(palette = "main", discrete = T, reverse = F, ...)
 }
 \arguments{
 \item{palette}{the name of the palette ('main', 'zune', 'cotton candy', 'laser sword')}

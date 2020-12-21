@@ -8,6 +8,9 @@
 \usage{
 colors_cyberpunk[name]
 }
+\arguments{
+\item{name}{name of the color used}
+}
 \value{
 A named character containing a hex color code.
 }

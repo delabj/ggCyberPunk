@@ -8,6 +8,9 @@
 \usage{
 palettes_cyberpunk[pal_name]
 }
+\arguments{
+\item{pal_name}{name of the palette to use}
+}
 \value{
 a list of names
 }

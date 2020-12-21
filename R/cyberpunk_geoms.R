@@ -29,7 +29,9 @@
 #'      theme_cyberpunk()+
 #'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
-#'      }
+#'}
+#' @export
+
 geom_glowing_area <- function(
   alpha =  1,
   size = 1.5,
@@ -89,7 +91,9 @@ geom_glowing_area <- function(
 #'      theme_dark()+
 #'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
-#'      }
+#'}
+#' @export
+
 geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.05, layers = 10, glow_size = 0.65){
 
   geoms <- list()
@@ -110,6 +114,11 @@ geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.05, layers 
 
 }
 
+
+#' A lightsaber inspired plot
+#' @rdname geom_glowing_line
+#' @describeIn geom_glowing_line
+#' @export
 geom_linesaber <- function(alpha =  1, size = 1.25, glow_alpha = 0.05, layers = 10, glow_size = .65, inner_color = "white"){
 
   geoms <- list(ggplot2::geom_line(size = size * 5.0,  alpha = alpha * glow_alpha, color = inner_color))

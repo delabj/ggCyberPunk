@@ -1,6 +1,7 @@
 #' Named colors for ggCyberPunk
 #'
 #' @description A set of named colors for use in this package's palettes.
+#' @param name name of the color used
 #' @usage colors_cyberpunk[name]
 #'
 #' @return A named character containing a hex color code.
@@ -25,7 +26,6 @@ colors_cyberpunk <- c(
 #' @usage get_cyberpunk_colors(c(color1, color2))
 #'
 #' @return A list of color codes
-#' @importFrom grDevices colorRampPalette
 get_cyberpunk_colors <- function(...){
   cols <- c(...)
 
@@ -39,7 +39,8 @@ get_cyberpunk_colors <- function(...){
 #' List of Palettes in ggCyberPunk
 #'
 #' @description A collection of palettes used in ggCyberPunk.
-#' @usage palettes_cyberpunk["pal_name"]
+#' @param pal_name name of the palette to use
+#' @usage palettes_cyberpunk[pal_name]
 #'
 #' @return a list of names
 #' @details 'main' is the default palette used. It has the neon blue, pink, yellow, and orange
@@ -53,13 +54,13 @@ palettes_cyberpunk <- list(
   'laser sword' = get_cyberpunk_colors('saber1 blue', 'saber2 green', 'saber3 red','saber4 purple')
 )
 
-
+#' get cyberpunk palletes from list.
 get_cyberpunk_palettes <- function(palette = "main", reverse = FALSE, ...) {
   pal <- palettes_cyberpunk[[palette]]
 
   if (reverse) pal <- rev(pal)
 
-  colorRampPalette(pal, ...)
+  grDevices::colorRampPalette(pal, ...)
 }
 
 
@@ -73,21 +74,28 @@ get_cyberpunk_palettes <- function(palette = "main", reverse = FALSE, ...) {
 #' @param palette the name of the palette ('main', 'zune', 'cotton candy', 'laser sword')
 #' @param discrete Boolean: is the scale discrete or not
 #' @param reverse Boolean: should the scale be reversed
+#' @rdname scale_color_cyberpunk
+#' @export
+
 scale_color_cyberpunk <- function(palette = 'main', discrete= T, reverse = F, ...){
   pal <- get_cyberpunk_palettes(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("colour", paste0("cyberpunk", palette), palette = pal, ...)
+    ggplot2::discrete_scale("colour", paste0("cyberpunk", palette), palette = pal, ...)
   } else {
     scale_color_gradientn(colours = pal(256), ...)
   }
 }
 
+#' Scale_fill_cyberpunk
+#' @rdname scale_color_cyberpunk
+#' @export
+
 scale_fill_cyberpunk <- function(palette = 'main', discrete= T, reverse = F, ...){
   pal <- get_cyberpunk_palettes(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("fill", paste0("cyberpunk", palette), palette = pal, ...)
+    ggplot2::discrete_scale("fill", paste0("cyberpunk", palette), palette = pal, ...)
   } else {
     scale_fill_gradientn(colours = pal(256), ...)
   }
@@ -98,7 +106,7 @@ scale_color_linesaber <- function(palette = 'laser sword', discrete= T, reverse 
   pal <- get_cyberpunk_palettes(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("colour", paste0("cyberpunk", palette), palette = pal, ...)
+    ggplot2::discrete_scale("colour", paste0("cyberpunk", palette), palette = pal, ...)
   } else {
     scale_color_gradientn(colours = pal(256), ...)
   }
@@ -109,7 +117,7 @@ scale_fill_linesaber <- function(palette = 'laser sword', discrete= T, reverse =
   pal <- get_cyberpunk_palettes(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("fill", paste0("cyberpunk", palette), palette = pal, ...)
+    ggplot2::discrete_scale("fill", paste0("cyberpunk", palette), palette = pal, ...)
   } else {
     scale_fill_gradientn(colours = pal(256), ...)
   }
