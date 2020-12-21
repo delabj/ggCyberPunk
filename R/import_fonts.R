@@ -9,6 +9,7 @@
 #'
 #'
 #' @export
+#' @import extrafont
 import_aldrich <- function() {
   rc_font_dir <- system.file("fonts", "Aldrich", package="ggCyberPunk")
 

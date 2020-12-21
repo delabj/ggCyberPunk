@@ -8,7 +8,7 @@ Description: Create a sci-fi themed area or line plot. This profides a "geom" of
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Imports: dplyr (>= 0.8.3), 
       ggplot2 (>= 3.3.0)
 Depends:

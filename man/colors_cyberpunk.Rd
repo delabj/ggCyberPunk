@@ -4,7 +4,9 @@
 \name{colors_cyberpunk}
 \alias{colors_cyberpunk}
 \title{Named colors for ggCyberPunk}
-\format{An object of class \code{character} of length 11.}
+\format{
+An object of class \code{character} of length 11.
+}
 \usage{
 colors_cyberpunk
 }
