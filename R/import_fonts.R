@@ -5,14 +5,11 @@
 #' A function to load the Poppins font for ease of use.
 #'
 #'
-#' @usage
-#' import_aldrich()
+#' @usage import_aldrich()
 #'
 #'
-#'
-
+#' @export
 import_aldrich <- function() {
-
   rc_font_dir <- system.file("fonts", "Aldrich", package="ggCyberPunk")
 
   suppressWarnings(suppressMessages(extrafont::font_import(rc_font_dir, prompt=FALSE)))
