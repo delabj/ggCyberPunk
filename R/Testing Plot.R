@@ -83,7 +83,7 @@
 # library(delabj)
 # df %>%
 #   ggplot(aes(x=I, y = count, color = group, fill= group))+
-#   geom_glowing_area()+
+#   geom_linesaber(glow_size = .35, glow_alpha = 0.05,layers = 10, size = .75,inner_color = "black")+
 #   theme_delabj_dark()+
 #   scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #   scale_color_manual(values = c("#08F7FE", "#FE53BB"))

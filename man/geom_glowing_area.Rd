@@ -11,7 +11,11 @@ geom_glowing_area(alpha =  1, size = 1, glow_alpha = 0.03)
 
 \item{size}{set the base line size.}
 
-\item{glow_alpha}{set the alpha for the glow}
+\item{glow_alpha}{alpha level for the glow effect}
+
+\item{layers}{number of glowing layers to draw,}
+
+\item{glow_size}{size of the glow}
 }
 \value{
 A list of ggplot geoms containin geom_area, geom_lines, and geom_point.

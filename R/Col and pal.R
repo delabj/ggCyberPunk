@@ -39,7 +39,7 @@ get_cyberpunk_colors <- function(...){
 #' List of Palettes in ggCyberPunk
 #'
 #' @description A collection of palettes used in ggCyberPunk.
-#' @usage palettes_cyberpunk[pal_name]
+#' @usage palettes_cyberpunk["pal_name"]
 #'
 #' @return a list of names
 #' @details 'main' is the default palette used. It has the neon blue, pink, yellow, and orange
