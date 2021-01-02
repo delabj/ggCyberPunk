@@ -36,6 +36,7 @@
 #'      theme_cyberpunk()+
 #'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
+#' @export
 theme_cyberpunk <- function (
   font = "Aldrich",
 main.text.color = "#EE9537",

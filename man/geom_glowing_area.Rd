@@ -33,11 +33,11 @@ library(tidyverse)
 
 df = data.frame(A=c(1,4,4,6,7,5,1),
                B=c(4,3,5,7,5,6,7),
-               I=c(1,2,3,4,5,6,7)) \%>\%
+               I=c(1,2,3,4,5,6,7)) %>%
 pivot_longer(cols = c(A,B),names_to = "group", values_to = "count")
 
 
-df \%>\%
+df %>%
    ggplot(aes(x=I, y = count, color = group, fill= group))+
      geom_glowing_area()+
      theme_cyberpunk()+
