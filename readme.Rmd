@@ -5,6 +5,11 @@ date: "4/2/2020"
 output: github_document
 ---
 
+  <!-- badges: start -->
+  [![R-CMD-check](https://github.com/delabj/ggCyberPunk/workflows/R-CMD-check/badge.svg)](https://github.com/delabj/ggCyberPunk/actions)
+  <!-- badges: end -->
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
