@@ -101,6 +101,10 @@ scale_fill_cyberpunk <- function(palette = 'main', discrete= T, reverse = F, ...
 }
 
 
+#' scale_color_linesaber
+#' @rdname scale_color_cyberpunk
+#' @export
+
 scale_color_linesaber <- function(palette = 'laser sword', discrete= T, reverse = T, ...){
   pal <- get_cyberpunk_palettes(palette = palette, reverse = reverse)
 
@@ -111,7 +115,10 @@ scale_color_linesaber <- function(palette = 'laser sword', discrete= T, reverse 
   }
 }
 
-
+#' scale_fill_linesaber
+#' @rdname scale_color_cyberpunk
+#' @export
+#'
 scale_fill_linesaber <- function(palette = 'laser sword', discrete= T, reverse = T, ...){
   pal <- get_cyberpunk_palettes(palette = palette, reverse = reverse)
 

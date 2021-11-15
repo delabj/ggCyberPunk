@@ -5,11 +5,17 @@
 \alias{scale_color_linesaber,}
 \alias{scale_fill_linesaber,}
 \alias{scale_fill_cyberpunk}
+\alias{scale_color_linesaber}
+\alias{scale_fill_linesaber}
 \title{Color with CyberPunk palettes!}
 \usage{
 scale_color_cyberpunk(palette = "main", discrete = T, reverse = F, ...)
 
 scale_fill_cyberpunk(palette = "main", discrete = T, reverse = F, ...)
+
+scale_color_linesaber(palette = "laser sword", discrete = T, reverse = T, ...)
+
+scale_fill_linesaber(palette = "laser sword", discrete = T, reverse = T, ...)
 }
 \arguments{
 \item{palette}{the name of the palette ('main', 'zune', 'cotton candy', 'laser sword')}

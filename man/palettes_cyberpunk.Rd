@@ -4,7 +4,9 @@
 \name{palettes_cyberpunk}
 \alias{palettes_cyberpunk}
 \title{List of Palettes in ggCyberPunk}
-\format{An object of class \code{list} of length 4.}
+\format{
+An object of class \code{list} of length 4.
+}
 \usage{
 palettes_cyberpunk
 }

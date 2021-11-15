@@ -19,8 +19,8 @@
 
   fnt <- extrafont::fonttable()
   if (!any(grepl("Aldrich", fnt$FamilyName))) {
-    packageStartupMessage("NOTE: Poppins is a required font for this theme to work by default")
-    packageStartupMessage("      Please use delabj::import_poppins() to install Poppins.")
+    packageStartupMessage("NOTE: aldrich is a required font for this theme to work by default")
+    packageStartupMessage("      Please use ggCyberPunk::import_aldrich() to install aldrich")
   }
 
 }
