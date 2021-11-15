@@ -47,7 +47,7 @@ pivot_longer(cols = c(A,B),names_to = "group", values_to = "count")
 df \%>\%
    ggplot(aes(x=I, y = count, color = group, fill= group))+
      geom_glowing_area()+
-     theme_dark()+
+     theme_cyberpunk()+
      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
 }

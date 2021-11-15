@@ -88,7 +88,7 @@ geom_glowing_area <- function(
 #' df %>%
 #'    ggplot(aes(x=I, y = count, color = group, fill= group))+
 #'      geom_glowing_area()+
-#'      theme_dark()+
+#'      theme_cyberpunk()+
 #'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
 #'}
@@ -145,7 +145,7 @@ geom_glowing_line <- function(alpha =  1, size = 1.5, glow_alpha = 0.05, layers 
 #' df %>%
 #'    ggplot(aes(x=I, y = count, color = group, fill= group))+
 #'      geom_linesaber()+
-#'      theme_dark()+
+#'      theme_cyberpunk()+
 #'      scale_fill_manual(values = c("#08F7FE", "#FE53BB"))+
 #'      scale_color_manual(values = c("#08F7FE", "#FE53BB"))
 #'}
